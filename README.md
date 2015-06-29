@@ -18,7 +18,7 @@ You will need to pass the following option when you first initialize the module:
 * `serverAddress` : Your ArangoDB server address, e.g: `http://localhost:8529`.
 * `baseURL` : Your database mounting point (not the Foxx mounting point), e.g: `/_db/_system`.
 
-
+Note: You will need to make sure the Development mode is **disabled** before running tests. Because in development mode, every request causes the app to be reloaded, which may interfere with the tests that already running for the same app.
 
 ## Examples
 FoxxSupertest works well with Mocha shipped-in with ArangoDB 2.6. The following examples demonstrate how it works as it differ a little bit from the original Supertest:
