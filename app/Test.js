@@ -6,7 +6,7 @@
  * Module dependencies
  *
  */
-var request = require('org/arangodb/request');
+var request = require('@arangodb/request');
 var util = require("util");
 var assert = require("assert");
 var console = require("console");
@@ -124,13 +124,13 @@ Test.prototype.assert = function(res, fn) {
             }
         } else {
             // string
-            if (body !== res.text) {
+            if (body !== res.body) {
                 var a = util.inspect(body);
-                var b = util.inspect(res.text);
+                var b = util.inspect(res.body);
 
                 // regexp
                 if (isregexp) {
-                    if (!body.test(res.text)) {
+                    if (!body.test(res.body)) {
                         return fn(error('expected body ' + b + ' to match ' + body, body, res.body), res);
                     }
                 } else {
